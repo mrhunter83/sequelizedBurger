@@ -1,0 +1,36 @@
+<center>
+ <h2>LET'S EAT!</h2>
+ <h2>Choose a burger to eat, or add your own burger to the menu to scarf down!</h2>
+<input type="text" id="new" name="name">
+<button id="create">CREATE!</button>
+</center>
+
+<center>
+<div style="display: inline-block; text-align: left">
+<p><h2>BURGERS TO DEVOUR</h2></p>
+  <ul style="list-style: none;">
+    {{#each burgers}}
+      {{#unless devoured}}
+        <li data-id="{{id}}" data-devoured="{{devoured}}">
+          {{id}}. {{burger_name}} | <button class="devour" data-id="{{id}}">DEVOUR!</button>
+        </li>
+      {{/unless}}
+    {{/each}}
+  </ul>
+</div>
+
+<div style="display: inline-block; text-align: left">
+<p><h2>DEVOURED BURGERS</h2></p>
+  <ul style="list-style: none;">
+    {{#each burgers}}
+      {{#if devoured}}
+        <li data-id="{{id}}" data-devoured="{{devoured}}">
+          {{id}}. {{burger_name}}
+        </li>
+      {{/if}}
+    {{/each}}
+  </ul>
+</div>
+
+</form>
+</center>
